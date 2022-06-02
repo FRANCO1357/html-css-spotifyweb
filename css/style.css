@@ -33,12 +33,18 @@ main{
     width: 220px;
     height: calc(100vh - 100px);
     padding: 15px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.side-bar img{
+.side-bar .logo{
     width: 120px;
     margin-bottom: 30px;
+}
+
+.side-bar .logo-small{
+    display: none;
 }
 
 .side-bar ul{
@@ -54,8 +60,16 @@ main{
     align-items: center;
 }
 
+.side-bar .home li:first-child{
+    border-left: 3px solid greenyellow;
+    padding-left: 10px;
+    margin-left: -15px;
+}
+
+
 .side-bar i{
     margin-right: 0.5rem;
+    color: #585858;
 }
 
 .side-bar h4{
@@ -66,48 +80,166 @@ main{
     margin: 10px 0;
 }
 
-.side-bar p{
+.side-bar .download p{
     color: #585858;
     font-size: 0.7rem;
     font-weight: 600;
+}
+
+.create-playlist p{
+    color: #585858;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.side-bar .playlist-name{
+    overflow-y: scroll;
+    height: 200px;
+}
+
+.side-bar li:hover{
+    color: white;
+}
+
+.side-bar .download p:hover{
+    color: white;
+}
+
+.side-bar .playlist p:hover{
+    color: white;
+}
+
+.side-bar .install{
+    display: flex;
+    align-items: center;
     line-height: 30px;
     border-bottom: 1px solid #585858;
 }
 
-.side-bar .download{
-    position: absolute;
-    bottom: 0;
+.side-bar .user{
+    display: flex;
+    align-items: center;
 }
 
 /* MAIN CONTENT */
+
+.main-content{
+    background-color: #141922;
+    height: calc(100vh - 100px);
+    width: calc(100vw - 220px);
+    overflow-y: scroll;
+    position: relative;
+}
 
 /* HEADER */
 
 header{
     background-color: rgba(4, 4, 5, 0.7);
-    width: 100%;
+    width: calc(100vw - 220px);
     height: 80px;
     position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.main-content{
-    background-color: #141922;
-    height: calc(100vh - 100px);
-    width: 100%;
-    overflow-y: scroll;
-    position: relative;
+header a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.7rem 2rem;
+    border-radius: 20px;
+    border: 1px solid white;
+    margin-right: 10px;
+}
+
+/* CONTENT */
+
+.content {
+    margin-top: 80px;
 }
 
 footer{
     background-color: #282828;
-    position: relative;
     z-index: 2;
-    width: 100%;
+    width: 100vw;
     height: 100px;
-}
-
-.content p{
-    margin-top: 80px;
+    position: relative;
 }
 
 
+/* RESPONSIVE MD */
+
+@media screen and (max-width: 992px) {
+    
+}
+
+
+/* RESPONSIVE S */
+
+@media screen and (max-width: 768px) {
+    
+}
+
+
+/* RESPONSIVE XS */
+
+@media screen and (max-width: 576px) {
+
+    /* header */
+
+    header{
+        height: 100px;
+    }
+
+    /* side bar */
+
+    .side-bar{
+        width: 50px;
+    }
+
+    .side-bar .logo{
+        display: none;
+    }
+
+    .side-bar .logo-small{
+        display: inline-block;
+        height: 25px;
+        margin-left: -2px;
+        margin-bottom: 20px;
+    }
+
+    .side-bar .playlist{
+        display: none;
+    }
+
+    .side-bar .install{
+        border: none;
+    }
+
+    .side-bar h5{
+        display: none;
+    }
+
+    .side-bar li p{
+        display: none;
+    }
+
+    .side-bar i{
+        margin-bottom: 0.5rem;
+    }
+
+    .download p{
+        display: none;
+    }
+
+    /* content */
+
+    .content{
+        margin-top: 100px;
+    }
+}
