@@ -194,6 +194,7 @@ footer{
 
     header{
         height: 100px;
+        width: calc(100vw - 50px);
     }
 
     /* side bar */
@@ -235,6 +236,10 @@ footer{
 
     .download p{
         display: none;
+    }
+
+    .main-content{
+        width: calc(100vw - 50px);
     }
 
     /* content */
