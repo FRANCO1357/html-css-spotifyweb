@@ -215,14 +215,14 @@ header a:hover{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: 2rem 0;
+    margin: 30px -10px;
 }
 
 .content .song{
-    width: 170px;
+    width: calc(100% / 6);
     text-align: center;
-    margin: 0 0.7rem 0.5rem 0;
     position: relative;
+    padding: 10px;
 }
 
 .song a{
@@ -251,7 +251,7 @@ header a:hover{
 }
 
 .song img{
-    width: 170px;
+    width: 100%;
     margin-bottom: 0.8rem;
 }
 
@@ -328,6 +328,10 @@ footer .track-details{
     margin: 0 0.5rem;
 }
 
+.track i{
+    display: none;
+}
+
 .track-name a{
     font-size: 0.7rem;
     text-decoration: none;
@@ -340,8 +344,9 @@ footer .track-details{
     text-decoration: underline;
 }
 
-.favourite i{
+.track .favourite i{
     color: #585858;
+    display: block;
 }
 
 .favourite i:hover{
@@ -467,6 +472,10 @@ footer .controls{
     width: 250px;
     }
 
+    .content .song{
+        width: 25%;
+    }
+
 }
 
 
@@ -496,6 +505,11 @@ footer .controls{
     .controls .sound{
     width: 70px;
     }
+
+    .content .song{
+        width: 50%;
+    }
+
 
 
 }
@@ -568,14 +582,9 @@ footer .controls{
     }
 
     .content .song{
-        width: 210px;
+        width: 50%;
         text-align: center;
-        margin: 0 0.7rem 0.5rem 0;
-    }
-    
-    .song img{
-        width: 210px;
-        margin-bottom: 0.8rem;
+        padding: 10px;
     }
     
     .song h3{
@@ -619,3 +628,37 @@ footer .controls{
         width: 120px;
     }
 }
+
+/* RESPONSIVE XXS */
+
+@media screen and (max-width:518px) {
+
+    .track .track-name, .track .favourite{
+        display: none;
+    }
+
+    footer .track{
+        width: 120px;
+    }
+
+    footer .track-details{
+        align-items: center;
+    }
+
+    .track i{
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    footer .controls{
+        width: 120px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .controls i{
+        margin: 0 5px;
+    }
+    
+}
+
